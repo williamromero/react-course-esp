@@ -408,3 +408,50 @@ peticion
   })
   .catch(console.warn);
 ```
+
+### Async / Await
+
+La finalidad de las funciones async/await es simplificar el comportamiento del uso síncrono de promesas y realizar algún comportamiento específico en un grupo de Promises. Del mismo modo que las Promises son semejantes a las devoluciones de llamadas estructuradas, async/await se asemejan a una combinación de generadores y promesas.
+[Referencia: Mozilla](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Sentencias/funcion_asincrona)
+
+```js
+import apiKey from "./data/giphy";
+const getImagen = async () => {
+  try {
+    const resp = await fetch(
+      `http://api.giphy.com/v1/gifs/random?api_key=${apiKey}`
+    );
+    const { data } = await resp.json();
+    const { url } = data.images.original;
+
+    const img = document.createElement("img");
+    img.src = url;
+    document.body.append(img);
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+getImagen();
+```
+
+### Operador Condicional Ternario
+
+```js
+const activo = true;
+// let mensaje = '';
+
+// if ( activo ) {
+//     mensaje = 'Activo';
+// } else {
+//     mensaje = 'Inactivo';
+// }
+// const mensaje = ( activo ) ? 'Activo' : 'Inactivo';
+// const mensaje = ( activo ) ? 'Activo' : null;
+const mensaje = activo && "Activo";
+// true
+const mensaje = !activo && "Activo";
+// false
+
+console.log(mensaje);
+```
