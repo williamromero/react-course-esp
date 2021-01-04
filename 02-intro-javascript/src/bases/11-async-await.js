@@ -1,11 +1,6 @@
-import apiKey from '../../../keys/giphy';
-const apiKey = apiKey;
-
-// const getImagenPromesa = () => new Promise( resolve => resolve('https://ajskdhaskjdhajs.com') )
-// getImagenPromesa().then( console.log );
+import apiKey from './data/giphy';
 
 const getImagen = async() => {
-
     try {
 
         const resp   = await fetch(`http://api.giphy.com/v1/gifs/random?api_key=${ apiKey }`);
@@ -20,10 +15,7 @@ const getImagen = async() => {
     } catch (error) {
         // manejo del error
         console.error(error)
-    }
-    
-    
-    
+    }    
 }
 
  getImagen();

@@ -1,5 +1,4 @@
-import apiKey from '../../../keys/giphy';
-const apiKey = apiKey;
+import apiKey from '../data/giphy';
 const peticion = fetch(`http://api.giphy.com/v1/gifs/random?api_key=${ apiKey }`);
 
 peticion
