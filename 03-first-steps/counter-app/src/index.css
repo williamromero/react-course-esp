@@ -1,0 +1,15 @@
+html,
+body {
+  background-color: #e8eef9;
+  display: flex;
+  font-family: -apple-system, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+  font-size: 1em;
+  justify-content: center;
+}
+
+body .content {
+  border-radius: 5px;
+  box-shadow: 0 1px 4px 0px rgb(169 183 208 / 73%);
+  padding: 1em;
+}
