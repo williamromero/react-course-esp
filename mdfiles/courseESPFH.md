@@ -455,3 +455,53 @@ const mensaje = !activo && "Activo";
 
 console.log(mensaje);
 ```
+
+## SECCIÓN 04: PRIMEROS PASOS EN REACT
+
+ReactJS emplea el uso de componentes y estados.
+El **estado** es como se encuentra la información de un objeto en determinado momento.
+Un **componente**, es una pieza de código reutilizable.
+
+```jsx
+import React from "react";
+import ReactDOM from "react-dom";
+
+const divRoot = document.querySelector("#app");
+const saludo = <h1>Hola mundo</h1>;
+
+ReactDOM.render(saludo, divRoot);
+```
+
+### Creación del Primer Functional Component
+
+Para crear un componente, es necesario crear una una **función**, la cual se habilitará
+para su exportación dentro del archivo **index.js**. Es una buena práctica nombrarla en **CamelCase**.
+
+**PrimeraApp.js:**
+
+```jsx
+import React from "react";
+import "./index.css";
+
+const PrimeraApp = () => {
+  return (
+    <div className="content">
+      <h1>Hola mundo</h1>
+    </div>
+  );
+};
+
+export default PrimeraApp;
+```
+
+**index.js:**
+
+```js
+import React from "react";
+import ReactDOM from "react-dom";
+import PrimeraApp from "./PrimeraApp";
+
+const divRoot = document.querySelector("#app");
+
+ReactDOM.render(<PrimeraApp />, divRoot);
+```
