@@ -18,7 +18,4 @@ const getImagen = async() => {
     }    
 }
 
- getImagen();
-
-
-
+getImagen();
