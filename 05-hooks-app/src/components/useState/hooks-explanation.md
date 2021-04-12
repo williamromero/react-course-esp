@@ -61,3 +61,70 @@ export default function CounterApp() {
   );
 }
 ```
+
+### USO DEL USEEFFECT
+
+Es un hook que nos permitirá ejecutar un efecto secundario cuando algo suceda en nuestros componentes.
+Si no se le agrega la inyección de dependencias, el hook reacciona al "no importa que cambie, tu te tienes que volver a ejecutar". Para saber cuando un objeto se carga por primera vez, podemos emplear **[]**.
+Si necesitamos saber cuando específicamente está cambiando el estado de un elemento en la página, podemos colocarlo como por ejemplo **[ email ]**.
+
+```js
+import React, { useState, useEffect } from "react";
+import Message from "./Message";
+
+const SimpleForm = () => {
+  const [formState, setFormState] = useState({ name: "", email: "" });
+  const { name, email } = formState;
+
+  useEffect(() => {
+    console.log("Hey, inició!");
+  }, []);
+  useEffect(() => {
+    console.log("formState cambió!");
+  }, [formState]);
+  useEffect(() => {
+    console.log("email cambió!");
+  }, [email]);
+
+  const handleInputChange = (e) => {
+    console.log(e.target.name, e.target.value);
+    setFormState({
+      ...formState,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  return (
+    <>
+      <h1>useEffect</h1>
+      <hr />
+      <div className="form-group">
+        <input
+          type="text"
+          name="name"
+          className="form-control"
+          placeholder="Tu nombre"
+          autoComplete="off"
+          value={name}
+          onChange={handleInputChange}
+        />
+      </div>
+      <div className="form-group">
+        <input
+          type="text"
+          name="email"
+          className="form-control"
+          placeholder="Tu correo"
+          autoComplete="off"
+          value={email}
+          onChange={handleInputChange}
+        />
+      </div>
+
+      {name === "123" && <Message />}
+    </>
+  );
+};
+
+export default SimpleForm;
+```
