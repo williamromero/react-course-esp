@@ -15,6 +15,7 @@ body {
 body #root {
   display: block;
   flex: 0 0 90%;
+  margin: 2em auto;
 }
 
 body #root .content {
@@ -119,4 +120,9 @@ body .btnsBox button {
   margin: 0.5em;
   padding: 0.5em 1em;
   color: #fff;
+}
+
+body #root blockquote {
+  line-height: 2.5em;
+  text-align: right;
 }

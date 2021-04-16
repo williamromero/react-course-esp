@@ -69,6 +69,7 @@ Si no se le agrega la inyección de dependencias, el hook reacciona al "no impor
 Si necesitamos saber cuando específicamente está cambiando el estado de un elemento en la página, podemos colocarlo como por ejemplo **[ email ]**.
 
 ```js
+// SimpleForm.js
 import React, { useState, useEffect } from "react";
 import Message from "./Message";
 
@@ -127,4 +128,24 @@ const SimpleForm = () => {
 };
 
 export default SimpleForm;
+
+// Message.js
+import React, { useEffect } from "react";
+
+const Message = () => {
+  useEffect(() => {
+    console.log("Componente Montado");
+    return () => {
+      console.log("Componente Desmontado");
+    };
+  }, []);
+
+  return (
+    <div className="messageElm">
+      <span>Eres genial!</span>
+    </div>
+  );
+};
+
+export default Message;
 ```
