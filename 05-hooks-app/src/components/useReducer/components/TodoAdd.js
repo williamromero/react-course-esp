@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useForm } from '../hooks/useForm'
 
 export const TodoAdd = ({ handleAddTodo }) => {
 
   const [ formValues, handleInputChange, reset ] = useForm({ description: '' });
   const { description } = formValues;
-  console.log(description) 
+
+  useEffect(() => {
+    console.log(`Resultado: ${description}`) 
+  }, [description])
   
   const handleSubmit = (e) => {
     e.preventDefault();

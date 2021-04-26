@@ -11,13 +11,15 @@ import ReactDOM from 'react-dom';
 // // import { LayoutEffect } from './components/useLayoutEffect/LayoutEffect';
 // // import { Memorize } from './components/useMemo/Memorize';
 // import { MemoHook } from './components/useMemo/MemoHook';
-import { TodoApp } from './components/useReducer/TodoApp';
+// import { TodoApp } from './components/useReducer/TodoApp';
+import { MainApp } from './components/useContext/MainApp';
+
 
 import './css/index.css'
 // import './components/useReducer/intro-reducer'
 
 ReactDOM.render(
-  <TodoApp />,
+  <MainApp />,
   document.getElementById('root')
 );
 

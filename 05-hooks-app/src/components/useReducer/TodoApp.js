@@ -29,6 +29,7 @@ export const TodoApp = () => {
   }
 
   const handleToggle = ( todo ) => {
+    console.log('dispatch handleToggle')
     const action = { type: 'toggle', payload: todo }
     dispatch( action )
   }

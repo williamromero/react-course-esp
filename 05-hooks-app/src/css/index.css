@@ -126,3 +126,12 @@ body #root blockquote {
   line-height: 2.5em;
   text-align: right;
 }
+
+body #root nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+body #root nav a.active {
+  color: #1eff86;
+}
